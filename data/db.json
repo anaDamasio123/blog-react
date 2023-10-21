@@ -9,13 +9,13 @@
         {
             "title": "My first blog", 
             "body": "more lorem ipsum...", 
-            "author": "mario", 
+            "author": "yoshi", 
             "id": 2 
         },
         {
             "title": "Opening party!", 
             "body": "bla bla bla", 
-            "author": "mario", 
+            "author": "ana", 
             "id": 3
         }
     ]
