@@ -5,16 +5,22 @@ const Create = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
 
+    const handleSubmit = e => { 
+        e.preventDefault();  // the default is to refresh the page, after the button is clicked
+       
+        const blogs = { title, body, author};  // it is the variables created above
+    }
+
     return ( 
         <div className="create">
             <h2>Add a New Blog</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Blog title:</label>
                 <input 
                     type="text"
                     required 
                     value={title}
-                    onChange={e => setTitle(e.target.value)}  // e -> event object; o 'target' é o elemento input e o 'value' é o que está sendo digitado
+                    onChange={e => setTitle(e.target.value)}
                 />
                 <label>Blog body:</label>
                 <textarea
