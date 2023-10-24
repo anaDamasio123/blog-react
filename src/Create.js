@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
     const [isPending, setIsPending] = useState(false);
+
+    const history = useHistory();
 
     const handleSubmit = e => { 
         e.preventDefault();  // the default is to refresh the page, after the button is clicked
@@ -18,8 +21,8 @@ const Create = () => {
          headers: { "Content-Type": "application/json" },  // content-type that has is being sent. We are telling the server the type of content that we are sending with this request; we are sending json data
          body: JSON.stringify(blog)  // actual data that we are sending; we have, first, to turn this object to a data string
         }).then(() => {
-            console.log('new blog added');
             setIsPending(false);
+            history.push('/');
         })
     }
 

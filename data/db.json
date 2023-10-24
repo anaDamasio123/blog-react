@@ -35,6 +35,18 @@
       "body": "rt",
       "author": "yoshi",
       "id": 6
+    },
+    {
+      "title": "rr",
+      "body": "r",
+      "author": "mario",
+      "id": 7
+    },
+    {
+      "title": "test redirect",
+      "body": "test redirect",
+      "author": "mario",
+      "id": 8
     }
   ]
 }
