@@ -4,11 +4,23 @@ const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
+    const [isPending, setIsPending] = useState(false);
 
     const handleSubmit = e => { 
         e.preventDefault();  // the default is to refresh the page, after the button is clicked
        
-        const blogs = { title, body, author};  // it is the variables created above
+        const blog = { title, body, author };  // it is the variables created above
+
+        setIsPending(true);
+
+        fetch('http://localhost:8000/blogs/', {  // we are doing a POST request, to this endpoint; json server will automatically add the id, when creating the new blog
+         method: 'POST',
+         headers: { "Content-Type": "application/json" },  // content-type that has is being sent. We are telling the server the type of content that we are sending with this request; we are sending json data
+         body: JSON.stringify(blog)  // actual data that we are sending; we have, first, to turn this object to a data string
+        }).then(() => {
+            console.log('new blog added');
+            setIsPending(false);
+        })
     }
 
     return ( 
@@ -33,7 +45,8 @@ const Create = () => {
                     <option value="mario">mario</option>
                     <option value="yoshi">yoshi</option>
                 </select>
-                <button>Add blog</button>
+                { !isPending && <button>Add blog</button> }
+                { isPending && <button disabled>Adding blog...</button> }
             </form>
         </div>
      );
