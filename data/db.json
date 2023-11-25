@@ -1,12 +1,6 @@
 {
   "blogs": [
     {
-      "title": "My new website",
-      "body": "lorem ipsum...",
-      "author": "mario",
-      "id": 1
-    },
-    {
       "title": "My first blog",
       "body": "more lorem ipsum...",
       "author": "yoshi",
@@ -37,16 +31,16 @@
       "id": 6
     },
     {
-      "title": "rr",
-      "body": "r",
-      "author": "mario",
-      "id": 7
-    },
-    {
       "title": "test redirect",
       "body": "test redirect",
       "author": "mario",
       "id": 8
+    },
+    {
+      "title": "knjed",
+      "body": "er",
+      "author": "mario",
+      "id": 9
     }
   ]
 }
